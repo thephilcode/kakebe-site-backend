@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team-members",
+  "info": {
+    "singularName": "team-member",
+    "pluralName": "team-members",
+    "displayName": "Team Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "department": {
+      "type": "enumeration",
+      "enum": [
+        "Executive Leadership",
+        "Operations & Strategy",
+        "Technical & Creative Team"
+      ]
+    },
+    "position": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "gallery": {
+      "type": "component",
+      "component": "shared.gallery-image",
+      "repeatable": true,
+      "max": 3
+    }
+  }
+}

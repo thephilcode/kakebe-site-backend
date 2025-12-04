@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_profiles",
+  "info": {
+    "singularName": "company-profile",
+    "pluralName": "company-profiles",
+    "displayName": "Company Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "intro_text": {
+      "type": "blocks"
+    },
+    "mission": {
+      "type": "blocks"
+    },
+    "vision": {
+      "type": "blocks"
+    },
+    "values": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "telephone": {
+      "type": "customField",
+      "customField": "plugin::strapi-phone-validator-5.phone",
+      "options": {
+        "country": "ug"
+      }
+    },
+    "whatsapp": {
+      "type": "customField",
+      "customField": "plugin::strapi-phone-validator-5.phone",
+      "options": {
+        "country": "ug"
+      }
+    },
+    "contact_email": {
+      "type": "email"
+    },
+    "website": {
+      "type": "string",
+      "default": "www.",
+      "required": false,
+      "regex": "^[\\w.-]+\\.[a-z]{2,}$"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}
