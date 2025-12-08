@@ -9,7 +9,9 @@ module.exports = ({ env }) => ({
       },
       actionOptions: {
         upload: {},
-        uploadStream: {},
+        uploadStream: { // This handles uploads from the Strapi Admin Media Library
+          folder: env('CLOUDINARY_FOLDER', 'kakebe-media'), // Use env variable or a default
+        },
         delete: {},
       },
       security: {
