@@ -11,7 +11,7 @@ module.exports = ({ env }) => ({
         upload: {},
         uploadStream: { // This handles uploads from the Strapi Admin Media Library
           folder: env('CLOUDINARY_FOLDER', 'kakebe-media'), // Use env variable or a default
-          maxConcurrent: 1, // Force Cloudinary to process one upload at a time
+          maxConcurrent: 3, // Force Cloudinary to process no more than 3 uploads at a time
         },
         delete: {},
       },
