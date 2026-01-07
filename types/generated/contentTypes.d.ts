@@ -879,20 +879,12 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     weblink: Schema.Attribute.String &
-      Schema.Attribute.CustomField<
-        'plugin::advanced-fields.input',
-        {
-          customErrorMessage: 'Enter a valid hyperlink';
-          defaultValue: 'https://kakebe.tech';
-          fieldNote: "Enter the full link to the product's website";
-          placeholder: 'https://example.com';
-        }
-      > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Schema.Attribute.DefaultTo<'https://kakebe.tech'>;
   };
 }
 

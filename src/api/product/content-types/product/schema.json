@@ -38,19 +38,13 @@
       ]
     },
     "weblink": {
-      "type": "customField",
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "customField": "plugin::advanced-fields.input",
-      "options": {
-        "placeholder": "https://example.com",
-        "customErrorMessage": "Enter a valid hyperlink",
-        "fieldNote": "Enter the full link to the product's website",
-        "defaultValue": "https://kakebe.tech"
-      },
+      "default": "https://kakebe.tech",
       "regex": "^(https?:\\/\\/)[\\w.-]+\\.[a-z]{2,}$"
     },
     "description": {
