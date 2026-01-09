@@ -654,34 +654,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHeroHero extends Struct.SingleTypeSchema {
-  collectionName: 'heroes';
-  info: {
-    displayName: 'Hero';
-    pluralName: 'heroes';
-    singularName: 'hero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hero.hero'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiInitiativeInitiative extends Struct.CollectionTypeSchema {
   collectionName: 'initiatives';
   info: {
@@ -1561,7 +1533,6 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::company-profile.company-profile': ApiCompanyProfileCompanyProfile;
       'api::global.global': ApiGlobalGlobal;
-      'api::hero.hero': ApiHeroHero;
       'api::initiative.initiative': ApiInitiativeInitiative;
       'api::innovator.innovator': ApiInnovatorInnovator;
       'api::product.product': ApiProductProduct;

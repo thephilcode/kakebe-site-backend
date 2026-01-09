@@ -7,6 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          'script-src': ["'self'", "'unsafe-eval'"],
           'connect-src': ["'self'", 'https:'],
           'img-src': [
             "'self'",
@@ -25,7 +26,9 @@ module.exports = [
           upgradeInsecureRequests: null,
           'script-src': [
             "'self'",
+            "'unsafe-inline'",
             "'unsafe-eval'",  // ← Critical: Strapi admin needs this for React
+            'https:',
             'https://cdnjs.cloudflare.com',
             'https://*.onrender.com'  // ← Your Render domain
           ],
